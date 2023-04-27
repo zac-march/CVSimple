@@ -2,7 +2,7 @@ import React from "react";
 
 class Preview extends React.Component {
   render() {
-    return <div id="preview">preview</div>;
+    return <div className="preview">preview</div>;
   }
 }
 

@@ -11,8 +11,8 @@
 }
 
 header,
-#form,
-#preview {
+.forms,
+.preview {
   outline: solid black 1px;
 }
 

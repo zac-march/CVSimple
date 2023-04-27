@@ -1,13 +1,13 @@
 import "./App.css";
 import Header from "./components/Header";
-import Form from "./components/Form";
+import Forms from "./components/Forms";
 import Preview from "./components/Preview";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Form />
+      <Forms />
       <Preview />
     </div>
   );

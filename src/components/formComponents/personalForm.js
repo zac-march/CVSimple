@@ -1,9 +1,9 @@
 import React from "react";
 
-class Form extends React.Component {
+class PersonalForm extends React.Component {
   render() {
     return (
-      <form id="form">
+      <form className="form-personal">
         <h2>Personal information</h2>
         <input id="firstName" placeholder="First Name" />
         <input id="lastName" placeholder="Last Name" />
@@ -15,4 +15,4 @@ class Form extends React.Component {
   }
 }
 
-export default Form;
+export default PersonalForm;
