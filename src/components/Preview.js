@@ -2,35 +2,38 @@ import React from "react";
 
 class Preview extends React.Component {
   render() {
+    const { data } = this.props;
+
     return (
       <div className="preview">
         <div className="preview-header">
-          <h1>Zachariah March</h1>
-          <p>Melbourne, VIC</p>
+          <h1>
+            {data.firstName} {data.lastName}
+          </h1>
+          <p>{data.address}</p>
           <p>
-            +61412345567<strong> | </strong>
-            zacmarch101@gmail.com<strong> | </strong>
-            <a href="zac-march.io">zac-march.io</a>
+            {data.phone}
+            <strong> | </strong>
+            {data.email}
+            <strong> | </strong>
+            <a href={"https://www." + data.website}>{data.website}</a>
           </p>
         </div>
 
         <div className="preview-education">
           <h2>Education</h2>
           <div>
-            <h4>James Cook University</h4>
-            <h4>Townsville, QLD</h4>
+            <h4>{data.uniName}</h4>
+            <h4>{data.uniCity}</h4>
             <h4>
-              <i>Bachelor of information technology</i>
+              <i>{data.uniDegree}</i>
             </h4>
             <h4>
-              <i>2019 - 2021</i>
+              <i>{data.uniTimeframe}</i>
             </h4>
           </div>
           <ul>
-            <li>
-              Achievement: Winner of the 2021 Prize for Excellence in Third year
-              Bachelor of Information Technology
-            </li>
+            <li>{data.uniDetails}</li>
           </ul>
         </div>
       </div>
