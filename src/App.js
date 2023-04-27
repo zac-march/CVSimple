@@ -8,7 +8,13 @@ class App extends React.Component {
   constructor() {
     super();
 
-    this.state = {
+    this.state = {};
+
+    this.handleAutoFill = this.handleAutoFill.bind(this);
+  }
+
+  handleAutoFill() {
+    const presetData = {
       firstName: "Jordan",
       lastName: "Walke",
       address: "Stanford, California",
@@ -22,6 +28,13 @@ class App extends React.Component {
       uniDetails:
         "Undergraduate research: Built privacy controls and interactive web interface for live location tracking.",
     };
+
+    for (let key in presetData) {
+      const inputElement = document.getElementById(key);
+      inputElement.value = presetData[key];
+    }
+
+    this.setState(presetData);
   }
 
   handleChange = (e) => {
@@ -34,8 +47,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Forms handleChange={this.handleChange} />
+        <Header handleAutoFill={this.handleAutoFill} />
+        <Forms handleChange={this.handleChange} data={this.state} />
         <Preview data={this.state} />
       </div>
     );
