@@ -16,6 +16,25 @@ header,
   outline: solid black 1px;
 }
 
-#preview {
+.preview {
   grid-row: span 2;
+  padding: 2rem;
+}
+
+.preview-header {
+  text-align: center;
+}
+
+.preview-education > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.preview-education > div h4:nth-child(even) {
+  justify-self: end;
+}
+
+.preview-education > div > * {
+  margin: 0;
 }

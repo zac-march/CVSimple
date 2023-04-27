@@ -7,7 +7,12 @@ class EducationForm extends React.Component {
         <h2>Education information</h2>
         <input id="university" placeholder="Your University" />
         <input id="degree" placeholder="Your Degree" />
-        <input id="timeframe" placeholder="Timeframe of attendance" />
+        <input id="education-location" placeholder="Location" />
+        <input id="timeframe" placeholder="Timeframe" />
+        <textarea
+          id="education-details"
+          placeholder="Additional details.."
+        ></textarea>
       </form>
     );
   }
