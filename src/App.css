@@ -25,16 +25,16 @@ header,
   text-align: center;
 }
 
-.preview-education > div {
+.preview-subheading {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
 
-.preview-education > div h4:nth-child(even) {
+.preview-subheading h4:nth-child(even) {
   justify-self: end;
 }
 
-.preview-education > div > * {
+.preview-subheading > * {
   margin: 0;
 }

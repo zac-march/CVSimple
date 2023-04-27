@@ -22,7 +22,7 @@ class Preview extends React.Component {
 
         <div className="preview-education">
           <h2>Education</h2>
-          <div>
+          <div className="preview-subheading">
             <h4>{data.uniName}</h4>
             <h4>{data.uniCity}</h4>
             <h4>
@@ -34,6 +34,22 @@ class Preview extends React.Component {
           </div>
           <ul>
             <li>{data.uniDetails}</li>
+          </ul>
+        </div>
+        <div className="preview-experience">
+          <h2>Experience</h2>
+          <div className="preview-subheading">
+            <h4>{data.expTitle}</h4>
+            <h4>{data.expTimeframe}</h4>
+            <h4>
+              <i>{data.expCompany}</i>
+            </h4>
+            <h4>
+              <i>{data.expCity}</i>
+            </h4>
+          </div>
+          <ul>
+            <li>{data.expDetails}</li>
           </ul>
         </div>
       </div>
