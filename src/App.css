@@ -38,3 +38,18 @@ header,
 .preview-subheading > * {
   margin: 0;
 }
+
+.preview-subheading + * {
+  margin: 0;
+}
+
+.form-head {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  padding: 10px;
+}
+
+button {
+  height: min-content;
+  align-self: center;
+}

@@ -1,57 +1,86 @@
 import React from "react";
+import uniqid from "uniqid";
 
 class Preview extends React.Component {
+  generateHtml(data, heading, props) {
+    let html = [];
+    for (let key in data) {
+      const subData = data[key];
+
+      html.push(
+        <div key={uniqid()}>
+          <div className="preview-subheading">
+            <h4>{subData[heading[0]]}</h4>
+            <h4>{subData[heading[1]]}</h4>
+            <h4>
+              <i>{subData[props[0]]}</i>
+            </h4>
+            <h4>
+              <i>{subData[props[1]]}</i>
+            </h4>
+          </div>
+          <ul>
+            <li style={{ listStyle: subData[props[2]] ? "inside" : "none" }}>
+              {subData[props[2]]}
+            </li>
+          </ul>
+        </div>
+      );
+    }
+    return html;
+  }
+
+  renderEducation(data) {
+    if (!data) return;
+    const heading = ["institution", "city"];
+    const props = ["degree", "timeframe", "details"];
+    return (
+      <div className="preview-education">
+        <h2>Education</h2>
+        {this.generateHtml(data, heading, props)}
+      </div>
+    );
+  }
+
+  renderExperience(data) {
+    if (!data) return;
+    const heading = ["title", "timeframe"];
+    const props = ["company", "city", "details"];
+    return (
+      <div className="preview-experience">
+        <h2>Experience</h2>
+        {this.generateHtml(data, heading, props)}
+      </div>
+    );
+  }
+
+  renderPersonal(data) {
+    const groupKey = Object.keys(data)[0];
+    const perData = data[groupKey];
+    return (
+      <div className="preview-header">
+        <h1>
+          {perData.firstName} {perData.lastName}
+        </h1>
+        <p>{perData.address}</p>
+        <p>
+          {perData.phone}
+          <strong> | </strong>
+          {perData.email}
+          <strong> | </strong>
+          <a href={"https://www." + perData.website}>{perData.website}</a>
+        </p>
+      </div>
+    );
+  }
+
   render() {
     const { data } = this.props;
-
     return (
       <div className="preview">
-        <div className="preview-header">
-          <h1>
-            {data.firstName} {data.lastName}
-          </h1>
-          <p>{data.address}</p>
-          <p>
-            {data.phone}
-            <strong> | </strong>
-            {data.email}
-            <strong> | </strong>
-            <a href={"https://www." + data.website}>{data.website}</a>
-          </p>
-        </div>
-
-        <div className="preview-education">
-          <h2>Education</h2>
-          <div className="preview-subheading">
-            <h4>{data.uniName}</h4>
-            <h4>{data.uniCity}</h4>
-            <h4>
-              <i>{data.uniDegree}</i>
-            </h4>
-            <h4>
-              <i>{data.uniTimeframe}</i>
-            </h4>
-          </div>
-          <ul>
-            <li>{data.uniDetails}</li>
-          </ul>
-        </div>
-        <div className="preview-experience">
-          <h2>Experience</h2>
-          <div className="preview-subheading">
-            <h4>{data.expTitle}</h4>
-            <h4>{data.expTimeframe}</h4>
-            <h4>
-              <i>{data.expCompany}</i>
-            </h4>
-            <h4>
-              <i>{data.expCity}</i>
-            </h4>
-          </div>
-          <ul>
-            <li>{data.expDetails}</li>
-          </ul>
-        </div>
+        {data.personal && this.renderPersonal(data.personal)}
+        {data.education && this.renderEducation(data.education)}
+        {data.experience && this.renderExperience(data.experience)}
       </div>
     );
   }

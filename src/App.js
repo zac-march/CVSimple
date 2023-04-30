@@ -37,18 +37,43 @@ class App extends React.Component {
     this.setState(presetData);
   }
 
+  // handleChange = (e) => {
+  //   this.setState((prevState) => ({
+  //     ...prevState,
+  //     [e.target.id]: e.target.value,
+  //   }));
+  // };
+
   handleChange = (e) => {
-    this.setState((prevState) => ({
-      ...prevState,
-      [e.target.id]: e.target.value,
-    }));
+    const [itemKey, groupKey] = e.target.id.split("_");
+    const formType = e.target.parentElement.dataset.type;
+
+    this.setState((prevState) => {
+      const stateCopy = { ...prevState[formType] };
+
+      if (!stateCopy[groupKey]) {
+        stateCopy[groupKey] = {};
+      }
+
+      const updatedGroupKey = {
+        ...stateCopy[groupKey],
+        [itemKey]: e.target.value,
+      };
+
+      const updatedState = {
+        ...stateCopy,
+        [groupKey]: updatedGroupKey,
+      };
+
+      return { [formType]: updatedState };
+    });
   };
 
   render() {
     return (
       <div className="App">
         <Header handleAutoFill={this.handleAutoFill} />
-        <Forms handleChange={this.handleChange} data={this.state} />
+        <Forms handleChange={this.handleChange} />
         <Preview data={this.state} />
       </div>
     );
