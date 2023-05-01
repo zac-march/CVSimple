@@ -74,6 +74,17 @@ class Preview extends React.Component {
     );
   }
 
+  renderSkills(data) {
+    const skillsValues = Object.values(data).map((value) => value.skill);
+    const listItems = skillsValues.map((item) => <li key={item}>{item}</li>);
+    return (
+      <div>
+        <h2>Skills & Technologies</h2>
+        <ul>{listItems}</ul>
+      </div>
+    );
+  }
+
   render() {
     const { data } = this.props;
     return (
@@ -81,6 +92,7 @@ class Preview extends React.Component {
         {data.personal && this.renderPersonal(data.personal)}
         {data.education && this.renderEducation(data.education)}
         {data.experience && this.renderExperience(data.experience)}
+        {data.skills && this.renderSkills(data.skills)}
       </div>
     );
   }

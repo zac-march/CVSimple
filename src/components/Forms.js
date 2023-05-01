@@ -2,6 +2,7 @@ import React from "react";
 import PersonalForm from "./formComponents/personalForm";
 import EducationForm from "./formComponents/educationForm";
 import ExperienceForm from "./formComponents/experienceForm";
+import SkillsForm from "./formComponents/skillsForm";
 import uniqid from "uniqid";
 
 class Forms extends React.Component {
@@ -11,6 +12,7 @@ class Forms extends React.Component {
     this.state = {
       education: this.addForm([], EducationForm),
       experience: this.addForm([], ExperienceForm),
+      skills: this.addForm([], SkillsForm),
     };
 
     this.handleAdd = this.handleAdd.bind(this);
@@ -23,7 +25,21 @@ class Forms extends React.Component {
 
   handleAdd(e) {
     const formType = e.target.dataset.type;
-    const Component = formType === "education" ? EducationForm : ExperienceForm;
+
+    let Component;
+    switch (formType) {
+      case "education":
+        Component = EducationForm;
+        break;
+      case "experience":
+        Component = ExperienceForm;
+        break;
+      case "skills":
+        Component = SkillsForm;
+        break;
+      default:
+        throw new Error(`Invalid formType: ${formType}`);
+    }
 
     this.setState((prevState) => {
       const formArray = this.addForm([...prevState[formType]], Component);
@@ -47,7 +63,9 @@ class Forms extends React.Component {
 
   handleRemove(e) {
     const id = e.target.dataset.id;
+    console.log("id:", id);
     const formType = e.target.dataset.type;
+    console.log("formType:", formType);
 
     this.setState((prevState) => {
       const formArray = prevState[formType].filter(
@@ -84,6 +102,17 @@ class Forms extends React.Component {
             data-type="experience"
             onClick={this.handleAdd}
             disabled={this.state.experience.length > 3}
+          >
+            Add
+          </button>
+        </div>
+        <div>
+          <h2>Skills & Technologies</h2>
+          {this.state.skills}
+          <button
+            data-type="skills"
+            onClick={this.handleAdd}
+            disabled={this.state.skills.length > 5}
           >
             Add
           </button>

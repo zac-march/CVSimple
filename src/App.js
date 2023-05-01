@@ -37,13 +37,6 @@ class App extends React.Component {
     this.setState(presetData);
   }
 
-  // handleChange = (e) => {
-  //   this.setState((prevState) => ({
-  //     ...prevState,
-  //     [e.target.id]: e.target.value,
-  //   }));
-  // };
-
   handleChange = (e) => {
     const [itemKey, groupKey] = e.target.id.split("_");
     const formType = e.target.parentElement.dataset.type;
