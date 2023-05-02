@@ -7,8 +7,7 @@ class EducationForm extends React.Component {
     this.id = uniqid();
   }
   render() {
-    const { handleChange, handleRemove, formKey, showRemoveButton } =
-      this.props;
+    const { handleChange, removeButton } = this.props;
 
     return (
       <div>
@@ -39,16 +38,7 @@ class EducationForm extends React.Component {
             onChange={handleChange}
           ></textarea>
         </form>
-        <button
-          style={{
-            display: showRemoveButton("education") ? "inline-block" : "none",
-          }}
-          data-id={formKey}
-          data-type={"education"}
-          onClick={handleRemove}
-        >
-          Remove
-        </button>
+        {removeButton}
       </div>
     );
   }

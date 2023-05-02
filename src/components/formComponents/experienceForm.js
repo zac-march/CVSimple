@@ -7,8 +7,7 @@ class ExperienceForm extends React.Component {
     this.id = uniqid();
   }
   render() {
-    const { handleChange, handleRemove, formKey, showRemoveButton } =
-      this.props;
+    const { handleChange, removeButton } = this.props;
 
     return (
       <div>
@@ -39,16 +38,7 @@ class ExperienceForm extends React.Component {
             onChange={handleChange}
           />
         </form>
-        <button
-          style={{
-            display: showRemoveButton("experience") ? "inline-block" : "none",
-          }}
-          data-id={formKey}
-          data-type={"experience"}
-          onClick={handleRemove}
-        >
-          Remove
-        </button>
+        {removeButton}
       </div>
     );
   }

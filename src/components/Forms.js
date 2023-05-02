@@ -3,6 +3,7 @@ import PersonalForm from "./formComponents/personalForm";
 import EducationForm from "./formComponents/educationForm";
 import ExperienceForm from "./formComponents/experienceForm";
 import SkillsForm from "./formComponents/skillsForm";
+import RemoveButton from "./formComponents/removeButton";
 import uniqid from "uniqid";
 
 class Forms extends React.Component {
@@ -10,9 +11,9 @@ class Forms extends React.Component {
     super(props);
 
     this.state = {
-      education: this.addForm([], EducationForm),
-      experience: this.addForm([], ExperienceForm),
-      skills: this.addForm([], SkillsForm),
+      education: this.addForm([], EducationForm, "education"),
+      experience: this.addForm([], ExperienceForm, "experience"),
+      skills: this.addForm([], SkillsForm, "skills"),
     };
 
     this.handleAdd = this.handleAdd.bind(this);
@@ -42,20 +43,29 @@ class Forms extends React.Component {
     }
 
     this.setState((prevState) => {
-      const formArray = this.addForm([...prevState[formType]], Component);
+      const formArray = this.addForm(
+        [...prevState[formType]],
+        Component,
+        formType
+      );
       return { [formType]: formArray };
     });
   }
 
-  addForm(arr, Component) {
+  addForm(arr, Component, formType) {
     const key = uniqid();
     arr.push(
       <Component
         key={key}
-        formKey={key}
         handleChange={this.props.handleChange}
-        handleRemove={this.handleRemove}
-        showRemoveButton={this.showRemoveButton}
+        removeButton={
+          <RemoveButton
+            handleRemove={this.handleRemove}
+            showRemoveButton={this.showRemoveButton}
+            formKey={key}
+            formType={formType}
+          />
+        }
       />
     );
     return arr;
@@ -63,13 +73,10 @@ class Forms extends React.Component {
 
   handleRemove(e) {
     const id = e.target.dataset.id;
-    console.log("id:", id);
     const formType = e.target.dataset.type;
-    console.log("formType:", formType);
-
     this.setState((prevState) => {
       const formArray = prevState[formType].filter(
-        (form) => form.props.formKey !== id
+        (form) => form.props.removeButton.props.formKey !== id
       );
       return { [formType]: formArray };
     });

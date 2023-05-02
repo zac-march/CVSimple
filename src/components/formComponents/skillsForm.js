@@ -7,8 +7,7 @@ class SkillsForm extends React.Component {
     this.id = uniqid();
   }
   render() {
-    const { handleChange, handleRemove, formKey, showRemoveButton } =
-      this.props;
+    const { handleChange, removeButton } = this.props;
 
     return (
       <div>
@@ -19,16 +18,7 @@ class SkillsForm extends React.Component {
             onChange={handleChange}
           />
         </form>
-        <button
-          style={{
-            display: showRemoveButton("skills") ? "inline-block" : "none",
-          }}
-          data-id={formKey}
-          data-type={"skills"}
-          onClick={handleRemove}
-        >
-          Remove
-        </button>
+        {removeButton}
       </div>
     );
   }
