@@ -44,7 +44,7 @@ class Preview extends React.Component {
 
   renderExperience(data) {
     if (!data) return;
-    const heading = ["title", "timeframe"];
+    const heading = ["position", "timeframe"];
     const props = ["company", "city", "details"];
     return (
       <div className="preview-experience">
@@ -76,7 +76,9 @@ class Preview extends React.Component {
 
   renderSkills(data) {
     const skillsValues = Object.values(data).map((value) => value.skill);
-    const listItems = skillsValues.map((item) => <li key={item}>{item}</li>);
+    const listItems = skillsValues.map((item) => (
+      <li key={uniqid()}>{item}</li>
+    ));
     return (
       <div>
         <h2>Skills & Technologies</h2>

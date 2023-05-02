@@ -1,39 +1,34 @@
 import React from "react";
-import uniqid from "uniqid";
 
 class EducationForm extends React.Component {
-  constructor() {
-    super();
-    this.id = uniqid();
-  }
   render() {
-    const { handleChange, removeButton } = this.props;
+    const { handleChange, removeButton, formKey } = this.props;
 
     return (
       <div>
         <form data-type="education">
           <input
-            id={"institution_" + this.id}
+            id={"institution_" + formKey}
             placeholder="Establishment"
             onChange={handleChange}
           />
           <input
-            id={"city_" + this.id}
+            id={"city_" + formKey}
             placeholder="City"
             onChange={handleChange}
           />
           <input
-            id={"degree_" + this.id}
+            id={"degree_" + formKey}
             placeholder="Degree/Certificate"
             onChange={handleChange}
           />
           <input
-            id={"timeframe_" + this.id}
+            id={"timeframe_" + formKey}
             placeholder="Timeframe"
             onChange={handleChange}
           />
           <textarea
-            id={"details_" + this.id}
+            id={"details_" + formKey}
             placeholder="Additional details.."
             onChange={handleChange}
           ></textarea>

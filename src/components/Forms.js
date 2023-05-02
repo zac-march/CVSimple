@@ -57,6 +57,7 @@ class Forms extends React.Component {
     arr.push(
       <Component
         key={key}
+        formKey={key}
         handleChange={this.props.handleChange}
         removeButton={
           <RemoveButton
@@ -74,6 +75,8 @@ class Forms extends React.Component {
   handleRemove(e) {
     const id = e.target.dataset.id;
     const formType = e.target.dataset.type;
+
+    this.props.removeData(formType, id);
     this.setState((prevState) => {
       const formArray = prevState[formType].filter(
         (form) => form.props.removeButton.props.formKey !== id

@@ -1,19 +1,14 @@
 import React from "react";
-import uniqid from "uniqid";
 
 class SkillsForm extends React.Component {
-  constructor() {
-    super();
-    this.id = uniqid();
-  }
   render() {
-    const { handleChange, removeButton } = this.props;
+    const { handleChange, removeButton, formKey } = this.props;
 
     return (
       <div>
         <form data-type="skills">
           <input
-            id={"skill_" + this.id}
+            id={"skill_" + formKey}
             placeholder="Skill/Technology"
             onChange={handleChange}
           />

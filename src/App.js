@@ -11,6 +11,7 @@ class App extends React.Component {
     this.state = {};
 
     this.handleAutoFill = this.handleAutoFill.bind(this);
+    this.removeData = this.removeData.bind(this);
   }
 
   handleAutoFill() {
@@ -62,11 +63,22 @@ class App extends React.Component {
     });
   };
 
+  removeData(formType, formKey) {
+    this.setState((prevState) => {
+      const stateCopy = { ...prevState[formType] };
+
+      delete stateCopy[formKey];
+
+      return { [formType]: stateCopy };
+    });
+    console.log(this.state);
+  }
+
   render() {
     return (
       <div className="App">
         <Header handleAutoFill={this.handleAutoFill} />
-        <Forms handleChange={this.handleChange} />
+        <Forms handleChange={this.handleChange} removeData={this.removeData} />
         <Preview data={this.state} />
       </div>
     );
