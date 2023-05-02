@@ -2,12 +2,19 @@ import React from "react";
 
 class Header extends React.Component {
   render() {
-    const { handleAutoFill } = this.props;
     return (
       <header>
         <h1>Resume Builder</h1>
-        <h2>An application by Zac March</h2>
-        <button onClick={handleAutoFill}>Auto fill</button>
+        <h2>
+          An application by
+          <a href="https://github.com/zac-march" alt="Link to GitHub">
+            <button>
+              <img alt="Link to GitHub"></img>
+              zac-march
+            </button>
+          </a>
+          <button onClick={this.props.savePreview}>Save</button>
+        </h2>
       </header>
     );
   }
