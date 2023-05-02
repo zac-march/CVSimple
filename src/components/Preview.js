@@ -6,6 +6,10 @@ class Preview extends React.Component {
     let html = [];
     for (let key in data) {
       const subData = data[key];
+      const detailsArr = subData[props[2]].split(/\r?\n/);
+      const listItems = detailsArr.map((item) => (
+        <li key={uniqid()}>{item}</li>
+      ));
 
       html.push(
         <div key={uniqid()}>
@@ -19,11 +23,7 @@ class Preview extends React.Component {
               <i>{subData[props[1]]}</i>
             </h4>
           </div>
-          <ul>
-            <li style={{ listStyle: subData[props[2]] ? "inside" : "none" }}>
-              {subData[props[2]]}
-            </li>
-          </ul>
+          <ul>{listItems}</ul>
         </div>
       );
     }
@@ -90,7 +90,7 @@ class Preview extends React.Component {
   render() {
     const { data } = this.props;
     return (
-      <div className="preview">
+      <div className="preview" id="preview">
         {data.personal && this.renderPersonal(data.personal)}
         {data.education && this.renderEducation(data.education)}
         {data.experience && this.renderExperience(data.experience)}
