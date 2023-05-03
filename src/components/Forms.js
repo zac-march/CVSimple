@@ -24,8 +24,8 @@ class Forms extends React.Component {
     return this.state[formType].length > 1;
   };
 
-  handleAdd(e) {
-    const formType = e.target.dataset.type;
+  handleAdd(e, formType) {
+    if (e) formType = e.target.dataset.type;
 
     let Component;
     switch (formType) {

@@ -14,6 +14,7 @@ class Header extends React.Component {
             </button>
           </a>
           <button onClick={this.props.savePreview}>Save</button>
+          <button onClick={this.props.autoFill}>Autofill</button>
         </h2>
       </header>
     );

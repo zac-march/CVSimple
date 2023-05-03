@@ -6,10 +6,11 @@ class Preview extends React.Component {
     let html = [];
     for (let key in data) {
       const subData = data[key];
-      const detailsArr = subData[props[2]].split(/\r?\n/);
-      const listItems = detailsArr.map((item) => (
-        <li key={uniqid()}>{item}</li>
-      ));
+      let listItems = [];
+      if (subData[props[2]]) {
+        const detailsArr = subData[props[2]].split(/\r?\n/);
+        listItems = detailsArr.map((item) => <li key={uniqid()}>{item}</li>);
+      }
 
       html.push(
         <div key={uniqid()}>

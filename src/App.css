@@ -19,6 +19,7 @@ header,
 .preview {
   grid-row: span 2;
   padding: 2rem;
+  aspect-ratio: 1/1.41;
 }
 
 .preview-header {
