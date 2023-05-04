@@ -20,7 +20,7 @@ const autofillState = {
     lh64qcvt: {
       position: "Codebreaker and Computer Scientist",
       timeframe: "1939 - 1952",
-      company: "Government Code and Cypher School (GC&CS)",
+      company: "Government Code and Cypher School",
       city: "Bletchley Park, UK",
       details:
         "Played a key role in cracking German codes during World War II by leading a team that developed the bombe machine\nContributed to the design of Colossus, the world's first programmable electronic digital computer\nPioneered the field of artificial intelligence by proposing the Turing test to determine a machine's ability to exhibit intelligent behavior\nConvicted of homosexuality and subjected to chemical castration, which led to his tragic death at the age of 41",

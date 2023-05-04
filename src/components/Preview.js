@@ -38,6 +38,7 @@ class Preview extends React.Component {
     return (
       <div className="preview-education">
         <h2>Education</h2>
+        <hr></hr>
         {this.generateHtml(data, heading, props)}
       </div>
     );
@@ -50,6 +51,7 @@ class Preview extends React.Component {
     return (
       <div className="preview-experience">
         <h2>Experience</h2>
+        <hr></hr>
         {this.generateHtml(data, heading, props)}
       </div>
     );
@@ -63,10 +65,10 @@ class Preview extends React.Component {
         <h1>
           {perData.firstName} {perData.lastName}
         </h1>
-        <p>{perData.address}</p>
         <p>
-          {perData.phone}
-          <strong> | </strong>
+          {perData.address} | {perData.phone}
+        </p>
+        <p>
           {perData.email}
           <strong> | </strong>
           <a href={"https://www." + perData.website}>{perData.website}</a>
@@ -83,6 +85,7 @@ class Preview extends React.Component {
     return (
       <div>
         <h2>Skills & Technologies</h2>
+        <hr></hr>
         <ul>{listItems}</ul>
       </div>
     );
