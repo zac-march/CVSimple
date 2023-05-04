@@ -127,12 +127,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header savePreview={this.savePreview} autoFill={this.autoFill} />
-        <Forms
-          ref={this.child}
-          handleChange={this.handleChange}
-          removeData={this.removeData}
-        />
+        <div className="sidebar">
+          <Header savePreview={this.savePreview} autoFill={this.autoFill} />
+          <Forms
+            ref={this.child}
+            handleChange={this.handleChange}
+            removeData={this.removeData}
+          />
+        </div>
         <Preview data={this.state} />
       </div>
     );

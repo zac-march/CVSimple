@@ -90,14 +90,15 @@ class Forms extends React.Component {
 
     return (
       <div className="forms">
-        <div>
+        <div className="form-container">
           <h2>Personal</h2>
           <PersonalForm handleChange={handleChange} />
         </div>
-        <div>
+        <div className="form-container">
           <h2>Education</h2>
           {this.state.education}
           <button
+            className="add-button"
             data-type="education"
             onClick={this.handleAdd}
             disabled={this.state.education.length > 1}
@@ -105,10 +106,11 @@ class Forms extends React.Component {
             Add
           </button>
         </div>
-        <div>
+        <div className="form-container">
           <h2>Experience</h2>
           {this.state.experience}
           <button
+            className="add-button"
             data-type="experience"
             onClick={this.handleAdd}
             disabled={this.state.experience.length > 3}
@@ -116,10 +118,11 @@ class Forms extends React.Component {
             Add
           </button>
         </div>
-        <div>
+        <div className="form-container">
           <h2>Skills & Technologies</h2>
           {this.state.skills}
           <button
+            className="add-button"
             data-type="skills"
             onClick={this.handleAdd}
             disabled={this.state.skills.length > 5}

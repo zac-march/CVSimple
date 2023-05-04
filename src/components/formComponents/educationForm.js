@@ -9,7 +9,7 @@ class EducationForm extends React.Component {
         <form data-type="education">
           <input
             id={"institution_" + formKey}
-            placeholder="Establishment"
+            placeholder="Institution"
             onChange={handleChange}
           />
           <input

@@ -5,7 +5,7 @@ class SkillsForm extends React.Component {
     const { handleChange, removeButton, formKey } = this.props;
 
     return (
-      <div>
+      <div className="skill-container">
         <form data-type="skills">
           <input
             id={"skill_" + formKey}

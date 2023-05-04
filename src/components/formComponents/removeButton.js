@@ -6,14 +6,13 @@ class RemoveButton extends React.Component {
 
     return (
       <button
-        style={{
-          display: showRemoveButton(formType) ? "inline-block" : "none",
-        }}
+        className="remove-button"
+        disabled={showRemoveButton(formType) ? false : true}
         data-id={formKey}
         data-type={formType}
         onClick={handleRemove}
       >
-        Remove
+        B
       </button>
     );
   }
