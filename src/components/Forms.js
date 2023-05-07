@@ -72,6 +72,16 @@ class Forms extends React.Component {
     return arr;
   }
 
+  resetState() {
+    this.setState(() => {
+      return {
+        education: this.addForm([], EducationForm, "education"),
+        experience: this.addForm([], ExperienceForm, "experience"),
+        skills: this.addForm([], SkillsForm, "skills"),
+      };
+    });
+  }
+
   handleRemove(e) {
     const id = e.currentTarget.dataset.id;
     const formType = e.currentTarget.dataset.type;

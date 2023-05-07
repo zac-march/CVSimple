@@ -18,7 +18,7 @@ class App extends React.Component {
     this.removeData = this.removeData.bind(this);
     this.autoFill = this.autoFill.bind(this);
 
-    this.child = React.createRef();
+    this.formsComponent = React.createRef();
   }
 
   handleChange = (e) => {
@@ -46,6 +46,12 @@ class App extends React.Component {
     });
   };
 
+  resetState() {
+    this.setState(() => {
+      return { education: {}, experience: {}, skills: {} };
+    });
+  }
+
   removeData(formType, formKey) {
     this.setState((prevState) => {
       const stateCopy = { ...prevState[formType] };
@@ -57,7 +63,12 @@ class App extends React.Component {
   }
 
   autoFill() {
-    renderAdditionalForms(this.child.current);
+    this.formsComponent.current.resetState();
+    this.setState(() => {
+      return { education: {}, experience: {}, skills: {} };
+    });
+
+    renderAdditionalForms(this.formsComponent.current);
 
     setTimeout(function () {
       const forms = document.querySelectorAll("form");
@@ -70,29 +81,28 @@ class App extends React.Component {
 
         if (formType !== prevFormType) formCount = 0;
         else formCount++;
-
         setFormData(form, formType, formCount);
         prevFormType = formType;
       });
-    }, 3);
+    }, 50);
 
-    function renderAdditionalForms(child) {
+    function renderAdditionalForms(formsComponent) {
       const multiForms = ["education", "experience", "skills"];
       multiForms.forEach((form) => {
         const formCount = Object.keys(autofillState[form]).length;
         for (let i = 1; i < formCount; i++) {
-          child.handleAdd(undefined, form);
+          formsComponent.handleAdd(undefined, form);
         }
       });
     }
 
     function setFormData(form, formType, i) {
       const formArr = Array.prototype.slice.call(form);
-      const values = Object.values(
+      const autofillValues = Object.values(
         autofillState[formType][Object.keys(autofillState[formType])[i]]
       );
       formArr.forEach((input, index) => {
-        setInput(input, values[index]);
+        setInput(input, autofillValues[index]);
       });
     }
 
@@ -110,7 +120,7 @@ class App extends React.Component {
 
   savePreview() {
     const input = document.getElementById("preview");
-    html2canvas(input).then((canvas) => {
+    html2canvas(input, { scale: 2 }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF();
 
@@ -149,7 +159,7 @@ class App extends React.Component {
         <div className="sidebar">
           <Header savePreview={this.savePreview} autoFill={this.autoFill} />
           <Forms
-            ref={this.child}
+            ref={this.formsComponent}
             handleChange={this.handleChange}
             removeData={this.removeData}
           />
