@@ -52,13 +52,12 @@ class App extends React.Component {
 
       return { [formType]: stateCopy };
     });
-    console.log(this.state);
   }
 
   autoFill() {
     renderAdditionalForms(this.child.current);
 
-    setInterval(function () {
+    setTimeout(function () {
       const forms = document.querySelectorAll("form");
 
       let formCount = 0;
