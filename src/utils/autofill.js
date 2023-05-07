@@ -17,6 +17,14 @@ const autofillState = {
     },
   },
   experience: {
+    lg75cvus: {
+      position: "Founder and Deputy Director",
+      timeframe: "1952 - 1954",
+      company: "Turing Institute",
+      city: "London, UK",
+      details:
+        "Founded the Turing Institute, a center for research in computer science and artificial intelligence\nServed as Deputy Director of the Institute\nContributed to the development of early programming languages and operating systems\nProposed the notion of machine learning, which is now a major field of study in artificial intelligence",
+    },
     lh64qcvt: {
       position: "Codebreaker and Computer Scientist",
       timeframe: "1939 - 1952",
