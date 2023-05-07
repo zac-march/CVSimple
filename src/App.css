@@ -7,7 +7,7 @@
   --form-bg-color: #1c1c1c;
   --form-padding: 1rem;
   --input-color: rgb(166, 166, 166);
-  --button-bg-color: #79d2b5;
+  --accent-color: rgb(121, 210, 181);
   --button-text-color: #2e2e2e;
   --mobile-font-scale: 0.65;
 }
@@ -37,13 +37,13 @@ h2 {
 }
 
 button {
-  background-color: var(--button-bg-color);
+  background-color: var(--accent-color);
   color: var(--button-text-color);
   border-radius: var(--radius);
   border: none;
   padding: 0.8rem;
   cursor: pointer;
-  transition: all 0.03s;
+  transition: transform 0.03s;
   font-weight: bold;
   box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
 }
@@ -58,7 +58,7 @@ a {
 
 button:active {
   background-color: #6ab89e;
-  transform: scale(0.95);
+  transform: scale(0.9);
 }
 
 .add-button:disabled {
@@ -181,7 +181,7 @@ button > p {
 
 .remove-button:hover,
 .add-button:hover {
-  color: var(--button-bg-color);
+  color: var(--accent-color);
 }
 
 .remove-button:active,
@@ -198,7 +198,7 @@ textarea {
   border-radius: var(--radius);
   border: none;
   padding: 5px 10px;
-  transition: all 0.05s;
+  transition: scale 0.05s;
   min-width: 0;
   box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
 }
