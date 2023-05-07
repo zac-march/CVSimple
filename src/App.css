@@ -351,28 +351,30 @@ form > input[id*="skill"] {
 
   /* preview font sizing */
   .preview h1 {
-    font-size: 4.375vw;
+    font-size: 4.2vw;
   }
 
   .preview h2 {
-    font-size: 3.5vw;
+    font-size: 3.36vw;
   }
 
   .preview h4 {
-    font-size: 2.25vw;
+    font-size: 2.16vw;
   }
 
   .preview h4 > i {
-    font-size: 2.125vw;
+    color: #383838;
+    font-size: 2.04vw;
+    font-weight: 100;
   }
 
   .preview p,
   .preview li {
-    font-size: 1.875vw;
+    font-size: 1.8vw;
   }
 
   .preview-education > div,
   .preview-experience > div {
-    margin-top: 1.875vw;
+    margin-top: 1.8vw;
   }
 }
