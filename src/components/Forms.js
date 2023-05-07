@@ -73,8 +73,8 @@ class Forms extends React.Component {
   }
 
   handleRemove(e) {
-    const id = e.target.dataset.id;
-    const formType = e.target.dataset.type;
+    const id = e.currentTarget.dataset.id;
+    const formType = e.currentTarget.dataset.type;
 
     this.props.removeData(formType, id);
     this.setState((prevState) => {

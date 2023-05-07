@@ -2,11 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 :root {
-  --radius: 15px;
+  --radius: 10px;
   --form-gap: 2rem;
   --form-bg-color: #1c1c1c;
   --form-padding: 1rem;
-  --input-color: #a6a6a6;
+  --input-color: rgb(166, 166, 166);
   --button-bg-color: #79d2b5;
   --button-text-color: #2e2e2e;
   --mobile-font-scale: 0.65;
@@ -41,10 +41,19 @@ button {
   color: var(--button-text-color);
   border-radius: var(--radius);
   border: none;
-  padding: 1rem;
+  padding: 0.8rem;
   cursor: pointer;
   transition: all 0.03s;
   font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
+}
+
+button > img {
+  width: 1rem;
+}
+
+a {
+  text-decoration: none;
 }
 
 button:active {
@@ -60,6 +69,19 @@ button:active {
 button:disabled {
   opacity: 0;
   pointer-events: none;
+}
+
+.scroll-to-preview {
+  position: fixed;
+  margin: 1rem;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+}
+
+.scroll-to-preview > button {
+  display: flex;
+  align-items: center;
 }
 
 .sidebar {
@@ -82,12 +104,24 @@ header {
 .header-top {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0.5rem;
+  align-items: center;
 }
 
 .header-bottom {
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+.header-bottom > a > button {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+button > p {
+  margin: 0;
 }
 
 .header-bottom > a > button {
@@ -136,6 +170,10 @@ header {
   color: var(--input-color);
 }
 
+.remove-button {
+  padding: 0.5rem;
+}
+
 .add-button {
   width: min-content;
   margin-top: 1rem;
@@ -151,21 +189,18 @@ header {
   background-color: var(--button-text-color);
 }
 
-.remove-button {
-  padding: 0.7rem;
-}
-
 input,
 textarea {
   background-color: #292929;
   color: var(--input-color);
   font-size: 0.9rem;
-  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   border-radius: var(--radius);
   border: none;
   padding: 5px 10px;
   transition: all 0.05s;
+  min-width: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
 }
 
 input:focus,
@@ -184,31 +219,19 @@ textarea {
 
 form {
   gap: 0.5rem;
-  overflow: hidden;
 }
 
 form[data-type="personal"],
 form[data-type="education"],
-form[data-type="experience"] {
+form[data-type="experience"],
+form[data-type="skills"] {
   display: grid;
   grid-template-columns: repeat(2, 49%);
 }
 
-form > textarea[id*="details"] {
+form > textarea[id*="details"],
+form > input[id*="skill"] {
   grid-column: span 2;
-}
-
-.skill-container {
-  display: flex;
-  align-items: center;
-}
-
-form[data-type="skills"] {
-  flex: 1;
-}
-
-form[data-type="skills"] > input {
-  width: 100%;
 }
 
 /* Preview */
@@ -300,6 +323,10 @@ form[data-type="skills"] > input {
     align-self: center;
     padding: 2rem;
   }
+
+  .scroll-to-preview {
+    visibility: visible;
+  }
 }
 
 @media screen and (max-width: 715px) {
@@ -316,10 +343,10 @@ form[data-type="skills"] > input {
   }
 
   .header-bottom > h2 {
-    flex: 2;
+    font-size: 1rem;
   }
-  .header-bottom > a {
-    flex: 1;
+  .header-top > h1 {
+    font-size: 1.7rem;
   }
 
   /* preview font sizing */

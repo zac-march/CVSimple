@@ -1,4 +1,5 @@
 import React from "react";
+import githubIcon from "../images/github.svg";
 
 class Header extends React.Component {
   render() {
@@ -15,8 +16,8 @@ class Header extends React.Component {
           <h2>An application by</h2>
           <a href="https://github.com/zac-march" alt="Link to GitHub">
             <button>
-              <img alt="Link to GitHub"></img>
-              zac-march
+              <img src={githubIcon} alt="Link to GitHub"></img>
+              <p>zac-march</p>
             </button>
           </a>
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import trashIcon from "../../images/trash.svg";
 
 class RemoveButton extends React.Component {
   render() {
@@ -12,7 +13,7 @@ class RemoveButton extends React.Component {
         data-type={formType}
         onClick={handleRemove}
       >
-        B
+        <img alt="Remove" src={trashIcon}></img>
       </button>
     );
   }
