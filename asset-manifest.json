@@ -1,7 +1,7 @@
 {
-  "main.css": "/resume-builder/static/css/main.48e88397.chunk.css",
-  "main.js": "/resume-builder/static/js/main.7c26aa8d.chunk.js",
-  "main.js.map": "/resume-builder/static/js/main.7c26aa8d.chunk.js.map",
+  "main.css": "/resume-builder/static/css/main.40d8f908.chunk.css",
+  "main.js": "/resume-builder/static/js/main.0cec4608.chunk.js",
+  "main.js.map": "/resume-builder/static/js/main.0cec4608.chunk.js.map",
   "static/js/1.2d73a738.chunk.js": "/resume-builder/static/js/1.2d73a738.chunk.js",
   "static/js/1.2d73a738.chunk.js.map": "/resume-builder/static/js/1.2d73a738.chunk.js.map",
   "static/js/2.9a2ec1e5.chunk.js": "/resume-builder/static/js/2.9a2ec1e5.chunk.js",
@@ -15,8 +15,8 @@
   "static/media/github.svg": "/resume-builder/static/media/github.c080e696.svg",
   "static/media/trash.svg": "/resume-builder/static/media/trash.dc17811a.svg",
   "static/media/down-arrow.svg": "/resume-builder/static/media/down-arrow.7ef86319.svg",
-  "static/css/main.48e88397.chunk.css.map": "/resume-builder/static/css/main.48e88397.chunk.css.map",
+  "static/css/main.40d8f908.chunk.css.map": "/resume-builder/static/css/main.40d8f908.chunk.css.map",
   "index.html": "/resume-builder/index.html",
-  "precache-manifest.37d2afebd1e2d7df05780b33356ce8ce.js": "/resume-builder/precache-manifest.37d2afebd1e2d7df05780b33356ce8ce.js",
+  "precache-manifest.bf33f88c46c0314eac6cbae48b912a57.js": "/resume-builder/precache-manifest.bf33f88c46c0314eac6cbae48b912a57.js",
   "service-worker.js": "/resume-builder/service-worker.js"
 }
