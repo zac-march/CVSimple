@@ -335,7 +335,8 @@ form > input[id*="skill"] {
     min-width: 80%;
   }
   .sidebar {
-    padding: 0.5rem;
+    padding: 1rem;
+    width: 93%;
   }
 
   .header-options {
