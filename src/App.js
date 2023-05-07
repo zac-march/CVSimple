@@ -5,7 +5,9 @@ import Preview from "./components/Preview";
 import React from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import autofillState from "./components/utils/autofill";
+import autofillState from "./utils/autofill";
+import inViewport from "in-viewport";
+import downIcon from "./images/down-arrow.svg";
 
 class App extends React.Component {
   constructor() {
@@ -124,8 +126,26 @@ class App extends React.Component {
   }
 
   render() {
+    let previewElem = document.querySelector("#preview");
+    document.addEventListener("scroll", () => {
+      if (!previewElem) previewElem = document.querySelector("#preview");
+      const visibleProp = inViewport(previewElem) ? "hidden" : "visible";
+      document.querySelector(".scroll-to-preview").style.visibility =
+        visibleProp;
+    });
+
     return (
       <div className="App">
+        <a
+          className="scroll-to-preview"
+          href="#preview"
+          alt="Scroll to preview"
+        >
+          <button>
+            <p>Go to preview</p>
+            <img src={downIcon} alt="Scroll icon"></img>
+          </button>
+        </a>
         <div className="sidebar">
           <Header savePreview={this.savePreview} autoFill={this.autoFill} />
           <Forms
