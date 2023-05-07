@@ -23,7 +23,7 @@ const autofillState = {
       company: "Government Code and Cypher School",
       city: "Bletchley Park, UK",
       details:
-        "Played a key role in cracking German codes during World War II by leading a team that developed the bombe machine\nContributed to the design of Colossus, the world's first programmable electronic digital computer\nPioneered the field of artificial intelligence by proposing the Turing test to determine a machine's ability to exhibit intelligent behavior\nConvicted of homosexuality and subjected to chemical castration, which led to his tragic death at the age of 41",
+        "Played a key role in cracking German codes during World War II by leading a team that developed the bombe machine\nContributed to the design of Colossus, the world's first programmable electronic digital computer\nPioneered the field of artificial intelligence by proposing the Turing test to determine a machine's ability to exhibit intelligent behavior",
     },
     lg71cvus: {
       position: "Director of the Computing Laboratory",
@@ -32,14 +32,6 @@ const autofillState = {
       city: "Manchester, UK",
       details:
         "Established the Computing Laboratory at the University of Manchester\nDeveloped the Manchester Mark 1, one of the earliest electronic stored-program computers\nContributed to the development of programming languages and compilers\nIntroduced the notion of a universal machine, which laid the foundation for modern computer architecture",
-    },
-    nb82cwvp: {
-      position: "Researcher",
-      timeframe: "1952 - 1954",
-      company: "National Physical Laboratory",
-      city: "Teddington, UK",
-      details:
-        "Worked on the development of the Automatic Computing Engine (ACE), a general-purpose electronic computer\nContributed to the design of the Pilot ACE, a smaller version of the ACE that was the first computer to use Williams-Kilburn tube storage\nDeveloped the programming language Autocode for the Pilot ACE",
     },
   },
   personal: {
