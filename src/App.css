@@ -9,6 +9,11 @@
   --input-color: #a6a6a6;
   --button-bg-color: #79d2b5;
   --button-text-color: #2e2e2e;
+  --mobile-font-scale: 0.65;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .App {
@@ -47,6 +52,11 @@ button:active {
   transform: scale(0.95);
 }
 
+.add-button:disabled {
+  margin: 0;
+  padding: 0;
+}
+
 button:disabled {
   opacity: 0;
   pointer-events: none;
@@ -58,8 +68,7 @@ button:disabled {
   display: flex;
   flex-direction: column;
   gap: var(--form-gap);
-  min-width: 30%;
-  max-width: 35%;
+  flex: 0.35;
 }
 
 /* Header */
@@ -210,7 +219,7 @@ form[data-type="skills"] > input {
   position: fixed;
   left: 50%;
   top: 2rem;
-  width: 540px;
+  bottom: 2rem;
   aspect-ratio: 70/99;
   padding: 2rem;
   background-color: white;
@@ -219,6 +228,8 @@ form[data-type="skills"] > input {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  min-width: 544px;
+  max-width: 544px;
 }
 
 .preview * {
@@ -271,4 +282,70 @@ form[data-type="skills"] > input {
 
 .preview-subheading + * {
   margin: 0;
+}
+
+@media screen and (max-width: 1300px), (max-height: 800px) {
+  .preview {
+    position: static;
+    margin: 1rem;
+    align-self: center;
+  }
+  .App {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sidebar {
+    width: 80%;
+    align-self: center;
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .preview {
+    max-width: 80%;
+    min-width: 80%;
+  }
+  .sidebar {
+    padding: 0.5rem;
+  }
+
+  .header-options {
+    height: 50%;
+  }
+
+  .header-bottom > h2 {
+    flex: 2;
+  }
+  .header-bottom > a {
+    flex: 1;
+  }
+
+  /* preview font sizing */
+  .preview h1 {
+    font-size: 4.375vw;
+  }
+
+  .preview h2 {
+    font-size: 3.5vw;
+  }
+
+  .preview h4 {
+    font-size: 2.25vw;
+  }
+
+  .preview h4 > i {
+    font-size: 2.125vw;
+  }
+
+  .preview p,
+  .preview li {
+    font-size: 1.875vw;
+  }
+
+  .preview-education > div,
+  .preview-experience > div {
+    margin-top: 1.875vw;
+  }
 }
