@@ -1,7 +1,7 @@
 {
-  "main.css": "/CVSimple/static/css/main.40d8f908.chunk.css",
-  "main.js": "/CVSimple/static/js/main.fb3b8d52.chunk.js",
-  "main.js.map": "/CVSimple/static/js/main.fb3b8d52.chunk.js.map",
+  "main.css": "/CVSimple/static/css/main.8481f432.chunk.css",
+  "main.js": "/CVSimple/static/js/main.2986f534.chunk.js",
+  "main.js.map": "/CVSimple/static/js/main.2986f534.chunk.js.map",
   "static/js/1.2d73a738.chunk.js": "/CVSimple/static/js/1.2d73a738.chunk.js",
   "static/js/1.2d73a738.chunk.js.map": "/CVSimple/static/js/1.2d73a738.chunk.js.map",
   "static/js/2.9a2ec1e5.chunk.js": "/CVSimple/static/js/2.9a2ec1e5.chunk.js",
@@ -15,8 +15,8 @@
   "static/media/github.svg": "/CVSimple/static/media/github.c080e696.svg",
   "static/media/trash.svg": "/CVSimple/static/media/trash.dc17811a.svg",
   "static/media/down-arrow.svg": "/CVSimple/static/media/down-arrow.7ef86319.svg",
-  "static/css/main.40d8f908.chunk.css.map": "/CVSimple/static/css/main.40d8f908.chunk.css.map",
+  "static/css/main.8481f432.chunk.css.map": "/CVSimple/static/css/main.8481f432.chunk.css.map",
   "index.html": "/CVSimple/index.html",
-  "precache-manifest.f0cd234cabca845f338bd63c4e9ff37f.js": "/CVSimple/precache-manifest.f0cd234cabca845f338bd63c4e9ff37f.js",
+  "precache-manifest.639196142d29206f6887d877148334f4.js": "/CVSimple/precache-manifest.639196142d29206f6887d877148334f4.js",
   "service-worker.js": "/CVSimple/service-worker.js"
 }

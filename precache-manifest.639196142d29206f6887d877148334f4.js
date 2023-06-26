@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "fb3b8d526ef39e7f4b8f",
-    "url": "/CVSimple/static/css/main.40d8f908.chunk.css"
+    "revision": "2986f5345ed1bc9da8f4",
+    "url": "/CVSimple/static/css/main.8481f432.chunk.css"
   },
   {
-    "revision": "fb3b8d526ef39e7f4b8f",
-    "url": "/CVSimple/static/js/main.fb3b8d52.chunk.js"
+    "revision": "2986f5345ed1bc9da8f4",
+    "url": "/CVSimple/static/js/main.2986f534.chunk.js"
   },
   {
     "revision": "2d73a738612f30d93f69",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/CVSimple/static/media/down-arrow.7ef86319.svg"
   },
   {
-    "revision": "857f3e0fe7078f82a9a4365d3762af7f",
+    "revision": "d07daada16ab3a9efa98e012fe6d793f",
     "url": "/CVSimple/index.html"
   }
 ];
