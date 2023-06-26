@@ -6,7 +6,7 @@ class Header extends React.Component {
     return (
       <header>
         <div className="header-top">
-          <h1>Resume Builder</h1>
+          <h1>CVSimple</h1>
           <div className="header-options">
             <button onClick={this.props.savePreview}>Save</button>
             <button onClick={this.props.autoFill}>Autofill</button>

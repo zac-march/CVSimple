@@ -23,6 +23,7 @@ html {
   background-color: black;
   color: white;
   margin: 0;
+  min-height: 100vh;
 }
 
 header,
@@ -242,7 +243,7 @@ form > input[id*="skill"] {
   position: fixed;
   left: 50%;
   top: 2rem;
-  bottom: 2rem;
+
   aspect-ratio: 70/99;
   padding: 2rem;
   background-color: white;
@@ -251,8 +252,9 @@ form > input[id*="skill"] {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  min-width: 544px;
-  max-width: 544px;
+  max-height: 90%;
+  min-height: 90%;
+  box-sizing: border-box;
 }
 
 .preview * {
@@ -331,8 +333,11 @@ form > input[id*="skill"] {
 
 @media screen and (max-width: 715px) {
   .preview {
-    max-width: 80%;
-    min-width: 80%;
+    max-width: 90%;
+    min-width: 90%;
+    min-height: none;
+    max-height: none;
+    padding: 24px;
   }
   .sidebar {
     padding: 1rem;
@@ -350,7 +355,12 @@ form > input[id*="skill"] {
     font-size: 1.7rem;
   }
 
+  .preview ul {
+    padding-left: 20px;
+  }
+
   /* preview font sizing */
+
   .preview h1 {
     font-size: 4.2vw;
   }
