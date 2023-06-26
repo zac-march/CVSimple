@@ -1,10 +1,10 @@
 # CVSimple
 
-This React single-page web application allows you to create a customized Resume with ease. You can easily add, edit, and delete input fields to include your data. The preview Resume updates in real-time as you make changes. Once you are satisfied with your result, you can download it as a PDF with a single button click. Additionally, the app includes an autofill functionality to preview an automatically filled Resume.
+This React single-page web application allows you to create a professional Resume with ease. You can easily add, edit, and delete input fields to include your data. The preview Resume updates in real-time as you make changes. Once you are satisfied with your result, you can download it as a PDF with a single button click. Additionally, the app includes an autofill functionality to preview an automatically filled Resume.
 
-## Demo
+**Link to project:** https://zac-march.github.io/CVSimple/
 
-Check out the [live demo](https://zac-march.github.io/CVSimple/ to see the app in action.
+![demo](https://github.com/zac-march/CVSimple/blob/main/demo/demo.gif)
 
 ## Features
 
@@ -18,7 +18,6 @@ Check out the [live demo](https://zac-march.github.io/CVSimple/ to see the app i
 
 - React
 - CSS (CSS Modules)
-- Photoshop
 - NPM
 - html2Canvas
 - jsPDF
